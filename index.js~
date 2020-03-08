@@ -1,0 +1,13 @@
+const ufcURL = "https://www.ufc.com/events";
+const axios = require("axios");
+
+const fetchData = async() => {
+	const result = await axios.get(ufcURL);
+	return cheerio.load(result.data);
+};
+
+const $ = await fetchData();
+const events = $('html.no-touchevents.details.js body.fontyourface.path-events div.dialog-off-canvas-main-canvas div.l-page main.l-page__main div.l-page__content div.l-main div div div.l-main__content div.l-main__system-content div#block-mainpagecontent.block.block-system.block-system-main-block div.ds-1col.ds-1col-filters.clearfix div.block-region-ds-content div.block.block-ufc-events.block-ufc-events-upcomingpast div.horizontal-tabs.clearfix div.c-listing__wrapper--horizontal-tabs.horizontal-tabs-panes details#events-list-upcoming.main-card.js-form-wrapper.form-wrapper.horizontal-tabs-pane div.details-wrapper div.view.view-events-upcoming-past-solr.view-id-events_upcoming_past_solr.view-display-id-upcoming.js-view-dom-id-4176f3e06134f3ab8ceccf3c5c5ba1ec21a31c0f971dc7ad7adde0487c81d3b5 div.l-container div.l-container__content--full div.views-infinite-scroll-content-wrapper.clearfix section.l-listing--stacked ul.l-listing__group li.l-listing__item article.c-card-event--result div.c-card-event--result__info h3.c-card-event--result__headline');
+console.log(events);
+
+
